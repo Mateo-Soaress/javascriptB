@@ -65,6 +65,73 @@ function gerarTabuada() {
 
     for (let i = 1; i <= 10; i++) {
         let multiplicacao = numero * i;
-        document.getElementById("resultado7/" + i).innerText = numero + " x " + i + " = " + multiplicacao
+        document.getElementById("resultado7").innerHTML += numero + " x " + i + " = " + multiplicacao + "</br>"
+    }
+}
+
+// 8 - Contador de 1 a 10
+function contarAte10() {
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById("resultado8").innerHTML += i + "</br>";
+    }
+}
+
+// 9 - Média de Notas
+function calcularMedia() {
+    let nota1 = Number(document.getElementById("nota9/1").value);
+    let nota2 = Number(document.getElementById("nota9/2").value);
+    let nota3 = Number(document.getElementById("nota9/3").value);
+    let media = (nota1 + nota2 + nota3) / 3;
+    media = media.toFixed(2);
+
+    let resultado;
+
+    if (media >= 6) {
+        resultado = "Aprovado";
+    }
+    else {
+        resultado = "Reprovado";
+    }
+
+    document.getElementById("resultado9").innerHTML = "Média: " + media + "</br> Resultado: " + resultado
+}
+
+// 10 - Conversor de Temperatura
+function converterTemperatura() {
+    let temperaturaCelsius = Number(document.getElementById("temperatura10").value);
+    let temperaturaFahrenheit = (temperaturaCelsius * 9/5) + 32;
+
+    document.getElementById("resultado10").innerText = "Resultado: " + temperaturaFahrenheit + "°F"
+}
+
+// 11 - Dia da Semana
+function encontrarDia() {
+    let numero = Number(document.getElementById("numero11").value);
+    let dias = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+
+    if (numero <= 7 && numero >= 1) {
+        document.getElementById("resultado11").innerText = "Resultado: " + dias[numero - 1];
+    }
+    else {
+        document.getElementById("resultado11").innerText = "[ERRO] Número inválido"
+    }
+}
+
+// 12 - Senha Simples
+function validarSenha() {
+    let senha = Number(document.getElementById("senha12").value);
+
+    if (senha == 1234) {
+        document.getElementById("resultado12").innerText = "Acesso permitido!"
+    }
+    else {
+        document.getElementById("resultado12").innerText = "Senha incorreta"
+    }
+}
+
+// 13 - Contagem Regressiva
+async function contarRegressivamente() {
+    for (let i = 10; i >= 1; i--) {
+        document.getElementById("resultado13").innerHTML += i + "</br>"
     }
 }
